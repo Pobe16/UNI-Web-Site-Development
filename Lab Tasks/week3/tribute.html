@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- template of basic structure of an HTML5 file -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>HTML TASK 3.2: Forms and form submission</title>
+    <style>
+        fieldset{
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-gap: 1rem;
+        }
+
+        fieldset>label{
+            grid-column: 1 / span 1;
+            text-align: right;
+        }
+
+        select[name=personal_title]{
+            grid-column: 2 / span 1;
+            text-align: left
+        }
+        fieldset input[type=text]{
+            grid-column: 2 / span 1;
+            text-align: left;
+        }
+
+        fieldset>p{
+            grid-column: 2 / span 1;
+            text-align: left;
+            margin: 0;
+        }
+
+        fieldset>p input {
+            margin: 0 .5rem 0 0;
+        }
+
+        fieldset>p label {
+            width: 100%;
+        }
+
+        fieldset input[type=submit]{
+            grid-column: 1 / span 2;
+            grid-row: 8 / span 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Form Page</h1>
+    <form action="http://pict.uws.ac.uk/cgi-davison/feedback_3_2.py" method="get">
+        <fieldset>
+			<legend>Your Details</legend>
+            <input type="hidden" name="My_Form_Page" value="This is a Completed Form">
+            <label for="personal_title">Title:</label>
+            <select name="personal_title" id="personal_title">
+                <option value="none selected">&nbsp;</option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Ms">Ms</option>
+                <option value="Miss">Miss</option>
+            </select>
+
+            <label for="Firstname">First Name:</label>
+            <input type="text" name="Firstname" id="Firstname">
+            <label for="Surname">Last Name:</label>
+            <input type="text" name="Surname" id="Surname">
+
+            <label>What kind of response would you prefer?</label>
+            <p>
+                <label for="mail"><input type="radio" name="response" id="mail" value="mail">Mail</label><br>
+                <label for="telephone"><input type="radio" name="response" id="telephone" value="telephone">Telephone</label><br>
+                <label for="fax"><input type="radio" name="response" id="fax" value="fax">Fax</label><br>
+                <label for="email"><input type="radio" name="response" id="email" value="email">EMail</label><br>
+            </p>
+
+            <label>I am interested in following areas:</label>
+            <p>
+                <label for="xhtml"><input type="checkbox" name="xhtml" id="xhtml" value="1">XHTML</label><br>
+                <label for="css"><input type="checkbox" name="css" id="css" value="1">CSS</label><br>
+                <label for="js"><input type="checkbox" name="js" id="js" value="1">JavaScript</label><br>
+                <label for="flash"><input type="checkbox" name="flash" id="flash" value="1">Flash</label><br>
+            </p>
+            <label for="customer_feedback">Comments:</label>
+            <textarea name="customer_feedback" id="customer_feedback" cols="30" rows="10"></textarea>
+
+
+
+			<input type="submit" name="Submit_Button" value="Submit Details">
+			<input type="hidden" name="Secret Message From Miko" value="This is not the greatest form in the world. This is just a tribute.html">
+		</fieldset>
+    </form>
+
+</body>
+
+</html>
